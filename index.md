@@ -1,37 +1,72 @@
-## Welcome to GitHub Pages
+## Introduction
 
-You can use the [editor on GitHub](https://github.com/bswhitneyWM/Data410-Example/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+My name is Bryce Whitney and I am a senior at William & Mary. 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Sample Script
 
-### Markdown
+Below is a sample script I created called `randomPassword.py`. It uses a combination of letters (both uppercase and lowercase) and numbers to create a random password which has a length determined by the user (Default is 10 characters). This is designed to be used in terminal where a user can determine the length of a password and set a random seed if they would like using the command 'python randomPassword.py -l [length] -r [random seed]' and replacing 'length' and 'random seed' with their desired quantities. This allows users to generate a password for websites and all they need to store is the random seed so they can regenerate the password if they forget it. 
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+```python
+#############################################################################################
+# File Name: randomPassword.py                                                              #
+# Python Version: 3.8.10                                                                    #
+#                                                                                           #
+# Author: Bryce Whitney                                                                     #
+# Last Edit: September 15, 2021                                                             #
+#                                                                                           #
+# Generates a random password using letters (uppercase and lowercase), numbers, and symbols #
+#############################################################################################
 
-```markdown
-Syntax highlighted code block
 
-# Header 1
-## Header 2
-### Header 3
+# Required Imports
+import string
+import random
+import argparse
 
-- Bulleted
-- List
 
-1. Numbered
-2. List
+def generatePassword(passwordLength=10, randomSeed=None):
+    """
+    Generates a random password of the length provided in the command line. If no length is given, the default is 8 characters. 
+    The user can also pass a random seed argument so they can reproduce their results. This way they can track the seeds they used
+    in a seperate file and regenerate their password when they forget it. 
 
-**Bold** and _Italic_ and `Code` text
+    Arguments:
+        passwordLength [int] -- Length of the desired password. 10 characters by deafult. 
+        randomSeed     [int] -- The random seed to be used. None by deafult.
+    """
+    # Create sets of characters
+    LETTERS = string.ascii_letters
+    NUMBERS = string.digits
+    SYMBOLS = string.punctuation
 
-[Link](url) and ![Image](src)
+    # Create list of all the possible characters
+    CHARACTERS = LETTERS + NUMBERS + SYMBOLS
+
+    # Set the random seed
+    random.seed(randomSeed)
+
+    # Generate the password by sampling all characters and return it
+    password = ''.join(random.choices(CHARACTERS, k=passwordLength))
+    return password
+
+###############
+# Main Method #
+###############
+if __name__ == '__main__':
+    # Create an ArgumentParser class object for dealing with commandline args
+    p = argparse.ArgumentParser(
+        description="Generates a random password using letters (uppercase and lowercase), numbers, and symbols.")
+
+    # Add an additional optional argument for the password length and random seed
+    p.add_argument("-l", "--length", default=10, type=int,
+                   help="Desired password length, 10 characters by deafult")
+    p.add_argument("-r", "--randomSeed", default=None, type=int,
+                   help="Desired random seed, None by deafult")
+
+    # Read any commandline arguements sent to the program
+    # NOTE: if -h or --help, the program stops here
+    args = p.parse_args()
+
+    # Generate and print the random password
+    print(generatePassword(args.length, args.randomSeed))
 ```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/bswhitneyWM/Data410-Example/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
