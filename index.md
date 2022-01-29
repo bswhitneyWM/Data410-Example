@@ -1,6 +1,3 @@
-<pre>
-</pre>
-## Introduction
 
 My name is Bryce Whitney and I am a senior at William & Mary. I am a Computer Science and Data Science double major, and outside the classroom I am the president of the Men's Club Ultimate team and spend a lot of time playing with them. Below is a nice selfie I took a while back:
 
