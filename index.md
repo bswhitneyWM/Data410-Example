@@ -1,3 +1,5 @@
+# Bryce Whitney Introduction Page
+
 ## Introduction
 
 My name is Bryce Whitney and I am a senior at William & Mary. I am a Computer Science and Data Science double major, and outside the classroom I am the president of the Men's Club Ultimate team and spend a lot of time playing with them. Below is a nice selfie I took a while back:
@@ -74,3 +76,9 @@ if __name__ == '__main__':
     # Generate and print the random password
     print(generatePassword(args.length, args.randomSeed))
 ```
+
+## Math 
+
+There are 52 possible letters (26 lowercase and 26 uppercase) and 10 digits that can be used in each password. That is a total of 62 characters. Characters can be repeated, which means there are ___ unique combinations for a password of lenth 10. The math is shown below:
+
+$$x+y=10$$
