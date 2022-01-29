@@ -77,6 +77,8 @@ if __name__ == '__main__':
 
 ## Math 
 
-There are 52 possible letters (26 lowercase and 26 uppercase) and 10 digits that can be used in each password. **That is a total of 62 characters**. Characters can be repeated, which means there are ___ unique combinations for a password of lenth 10. The math is shown below:
+There are 52 possible letters (26 lowercase and 26 uppercase) and 10 digits that can be used in each password. **That is a total of 62 characters**. Characters can be repeated, which means there are **107,518,933,731 unique** combinations for a password of lenth 10. The math is shown below:
 
-$$ x+y=10 $$
+<p align="center">
+<img src="https://render.githubusercontent.com/render/math?math=62 \choose 10 = \frac{62!}{(10!)(52!)} = 107518933731">
+</p>
