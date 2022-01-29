@@ -3,4 +3,4 @@ plugins:
 - jekyll-remote-theme # add this line to the plugins list if you already have one
 
 title: [Bryce Whitney Project 1 - Introduction]
-description: A short introduction about myself and a random password generator I created in the past.
+description: [A short introduction about myself and a random password generator I created in the past.]
