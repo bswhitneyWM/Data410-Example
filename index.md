@@ -7,7 +7,7 @@ My name is Bryce Whitney and I am a senior at William & Mary. I am a Computer Sc
 
 ## Sample Script
 
-Below is a sample script I created called `randomPassword.py`. It uses a combination of letters (both uppercase and lowercase) and numbers to create a random password which has a length determined by the user (Default is 10 characters). This is designed to be used in terminal where a user can determine the length of a password and set a random seed if they would like using the command 'python randomPassword.py -l [length] -r [random seed]' and replacing 'length' and 'random seed' with their desired quantities. This allows users to generate a password for websites and all they need to store is the random seed so they can regenerate the password if they forget it. 
+Below is a sample script I created called `randomPassword.py`. It uses a combination of letters (both uppercase and lowercase) and numbers to create a random password which has a length determined by the user (Default is 10 characters). This is designed to be used in terminal where a user can determine the length of a password and set a random seed if they would like using the command *python randomPassword.py -l [length] -r [random seed]* and replacing *length* and *random seed* with their desired quantities. This allows users to generate a password for websites and all they need to store is the random seed so they can regenerate the password if they forget it. 
 
 ```python
 #############################################################################################
